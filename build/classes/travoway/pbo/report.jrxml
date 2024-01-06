@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="226" pageHeight="396" columnWidth="186" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="670ba869-3567-49b6-9701-92e54d1d3877">
+    <style name="Title" fontName="Helvetica" fontSize="18" isBold="true"/>
+    <style name="SubTitle" forecolor="#666666" fontName="Helvetica" fontSize="12"/>
+    <style name="ColumnHeader" forecolor="#666666" fontName="Helvetica" fontSize="12" isBold="true"/>
+    <style name="Detail" fontName="Helvetica" fontSize="10"/>
+    
+    <field name="Nama" class="java.lang.String"/>
+    <field name="Gender" class="java.lang.String"/>
+    <field name="PhoneNumber" class="java.lang.String"/>
+    <field name="TravelId" class="java.lang.String"/>
+    <field name="Asal" class="java.lang.String"/>
+    <field name="Tujuan" class="java.lang.String"/>
+    <field name="Type" class="java.lang.String"/>
+    <field name="SeatNum" class="java.lang.String"/>
+    <field name="Total" class="java.lang.String"/>
+    
+    <title>
+        <band height="50">
+            <staticText>
+                <reportElement x="0" y="0" width="555" height="30" uuid="abc12345-6789-0123-4567-89abcdef0123"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font style="Title"/>
+                </textElement>
+                <text><![CDATA[Pemesanan Tiket]]></text>
+            </staticText>
+        </band>
+    </title>
+    
+    <columnHeader>
+        <band height="20">
+            <staticText>
+                <reportElement style="ColumnHeader" positionType="Float" x="0" y="0" width="555" height="20" uuid="def01234-5678-9abc-def0-123456789abc"/>
+                <textElement>
+                    <font isBold="false"/>
+                </textElement>
+                <text><![CDATA[Detail Pemesanan Tiket]]></text>
+            </staticText>
+        </band>
+    </columnHeader>
+    
+    <detail>
+        <band height="20">
+            <textField>
+                <reportElement style="Detail" x="0" y="0" width="555" height="20" uuid="01234567-89ab-cdef-0123-456789abcdef"/>
+                <textFieldExpression><![CDATA["Nama: " + $F{Nama} + " - Gender: " + $F{Gender} + " - Tel: " + $F{PhoneNumber}]]></textFieldExpression>
+            </textField>
+        </band>
+        <band height="20">
+            <textField>
+                <reportElement style="Detail" x="0" y="0" width="555" height="20" uuid="fedcba98-7654-3210-9876-543210fedcba"/>
+                <textFieldExpression><![CDATA["Travel ID: " + $F{TravelId} + " - Dari: " + $F{Asal} + " - Ke: " + $F{Tujuan}]]></textFieldExpression>
+            </textField>
+        </band>
+        <band height="20">
+            <textField>
+                <reportElement style="Detail" x="0" y="0" width="555" height="20" uuid="02468ace-1357-9bdf-e246-8ace13579bdf"/>
+                <textFieldExpression><![CDATA["Tipe: " + $F{Type} + " - Nomor Kursi: " + $F{SeatNum} + " - Total: Rp " + $F{Total}]]></textFieldExpression>
+            </textField>
+        </band>
+    </detail>
+</jasperReport>
